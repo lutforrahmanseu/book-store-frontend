@@ -48,7 +48,7 @@ export default function BookCard({ books, heading }) {
 
                   </div>
                 </div>
-                <div className="bg-white">
+                <div className="bg-white ">
                     <div>
                     <h1>{book.bookTitle}</h1>
                     <p>{book.authorName}</p>
