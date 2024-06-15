@@ -14,11 +14,11 @@ export default function Shop() {
         All Books Are Hear
       </h2>
       <div className="grid grid-cols-1 my-12 md:grid-cols-2 lg:grid-cols-4 gap-7">
-        {books.map((book) => {
+        {books.map((book,index) => {
           const { imageURL, bookDescription, bookTitle } = book;
           return (
             <Card
-            
+            key={index}
             >
              
              <img src={imageURL} className="h-96 " alt="" />
@@ -27,7 +27,7 @@ export default function Shop() {
                 {bookTitle}
               </h5>
               <p className="font-normal text-gray-700 dark:text-gray-400">
-                {bookDescription.slice(0, 10)}
+                {bookDescription}
               </p>
              </div>
             

@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CiMenuBurger } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
+import { AuthContext } from "../contects/AuthProvider";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
-
+const {user}=useContext(AuthContext)
+console.log(user)
   //toggle
 
   const toggleHandler = () => {
@@ -65,10 +67,10 @@ export default function Navbar() {
 
           {/* mobile responsive */}
 
-          <div className="md:hidden">
+          <div >
             <button
               onClick={toggleHandler}
-              className="focus:outline-none text-black"
+              className="focus:outline-none text-black md:hidden"
             >
               {isOpen ? (
                 <RxCross1 className="w-5 h-4 text-black" />
@@ -76,6 +78,9 @@ export default function Navbar() {
                 <CiMenuBurger className="w-5 h-5 text-black" />
               )}
             </button>
+            {
+              user&& <div>{user.email}</div>
+            }
           </div>
 
           <div

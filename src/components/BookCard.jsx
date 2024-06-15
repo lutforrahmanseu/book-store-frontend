@@ -8,7 +8,7 @@ import './BookCard.css'
 import { CiShoppingCart } from "react-icons/ci";
 
 export default function BookCard({ books, heading }) {
-  console.log(books, heading);
+  
   return (
     <div className="my-7 px-4 md:px-24 relative">
       <h2 className="text-bold text-5xl font-sans text-center">{heading}</h2>

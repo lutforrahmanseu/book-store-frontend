@@ -9,7 +9,9 @@ import {
   HiUser,
   HiViewBoards,
 } from "react-icons/hi";
+import { useParams } from "react-router";
 export default function SideBars() {
+  const {id}=useParams()
   return (
     <div>
       <Sidebar className="">
@@ -24,8 +26,14 @@ export default function SideBars() {
             <Sidebar.Item href="/admin/dashboard/manage" icon={HiInbox}>
               Manage
             </Sidebar.Item>
-            <Sidebar.Item href="/admin/dashboard/edit/:id" icon={HiUser}>
+            <Sidebar.Item href={`/admin/dashboard/edit/${id}`} icon={HiUser}>
               Edit
+            </Sidebar.Item>
+            <Sidebar.Item href='/login' icon={HiUser}>
+              Login
+            </Sidebar.Item>
+            <Sidebar.Item href='/logout' icon={HiUser}>
+              Logout
             </Sidebar.Item>
             
           </Sidebar.ItemGroup>
